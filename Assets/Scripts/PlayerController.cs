@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     public int health = 5;
     ///<summary>Sets text for score in display</summary>
     public Text scoreText;
+    ///<summary>Sets text for health display</summary>
+    public Text healthText;
     private Rigidbody rb;
     private int score = 0;
 
@@ -55,7 +57,8 @@ public class PlayerController : MonoBehaviour
         if (other.tag=="Trap")
         {
             health--;
-            Debug.Log($"Health: {health}");
+            SetHealthText();
+            //Debug.Log($"Health: {health}");
         }
 
         if (other.gameObject.tag=="Goal")
@@ -68,6 +71,12 @@ public class PlayerController : MonoBehaviour
     void SetScoreText()
     {
         scoreText.text = $"Score: {score}";
+    }
+
+    ///<summary>Updates player's health in text</summary>
+    void SetHealthText()
+    {
+        healthText.text = $"Health: {health}";
     }
 
     /// <summary>Destroys controller on disable</summary>
