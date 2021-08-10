@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 10.0f;
     ///<summary>Set's Players health (default of 5)</summary>
     public int health = 5;
-    //private CharacterController controller;
+    ///<summary>Sets text for score in display</summary>
+    public Text scoreText;
     private Rigidbody rb;
     private int score = 0;
 
@@ -45,7 +47,8 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag=="Pickup")
         {
             score += 1;
-            Debug.Log($"Score: {score}");
+            SetScoreText();
+            // Debug.Log($"Score: {score}");
             Destroy(other.gameObject);
         }
 
@@ -59,6 +62,12 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("You win!");
         }
+    }
+
+    /// <summary>Updates player's score in text</summary>
+    void SetScoreText()
+    {
+        scoreText.text = $"Score: {score}";
     }
 
     /// <summary>Destroys controller on disable</summary>
