@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public Text scoreText;
     ///<summary>Sets text for health display</summary>
     public Text healthText;
+    public Image winLoseBG;
+    public Text winLoseText;
     private Rigidbody rb;
     private int score = 0;
 
@@ -63,7 +65,11 @@ public class PlayerController : MonoBehaviour
 
         if (other.gameObject.tag=="Goal")
         {
-            Debug.Log("You win!");
+            winLoseBG.gameObject.SetActive(true);
+            winLoseBG.color = Color.green;
+            winLoseText.text = "You win!";
+            winLoseText.color = Color.black;
+            //Debug.Log("You win!");
         }
     }
 
@@ -77,11 +83,5 @@ public class PlayerController : MonoBehaviour
     void SetHealthText()
     {
         healthText.text = $"Health: {health}";
-    }
-
-    /// <summary>Destroys controller on disable</summary>
-    public void OnDisable()
-    {
-        //Destroy(controller);
     }
 }
