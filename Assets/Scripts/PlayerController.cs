@@ -44,8 +44,8 @@ public class PlayerController : MonoBehaviour
             winLoseBG.color = Color.red;
             winLoseText.text = "Game Over!";
             winLoseText.color = Color.white;
-            Debug.Log("Game Over!");
-            SceneManager.LoadScene("maze");
+            //Debug.Log("Game Over!");
+            StartCoroutine(LoadScene(3));
         }
     }
 
@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
             winLoseText.text = "You win!";
             winLoseText.color = Color.black;
             //Debug.Log("You win!");
+            StartCoroutine(LoadScene(3));
         }
     }
 
@@ -87,5 +88,12 @@ public class PlayerController : MonoBehaviour
     void SetHealthText()
     {
         healthText.text = $"Health: {health}";
+    }
+
+    ///<summary>Waits before loading next scene</summary>
+    IEnumerator LoadScene(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        SceneManager.LoadScene("maze");
     }
 }
