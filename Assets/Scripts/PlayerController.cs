@@ -40,6 +40,10 @@ public class PlayerController : MonoBehaviour
         // Checking health before moving
         if (health == 0)
         {
+            winLoseBG.gameObject.SetActive(true);
+            winLoseBG.color = Color.red;
+            winLoseText.text = "Game Over!";
+            winLoseText.color = Color.white;
             Debug.Log("Game Over!");
             SceneManager.LoadScene("maze");
         }
