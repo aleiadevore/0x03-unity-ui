@@ -12,6 +12,9 @@ public class MainMenu : MonoBehaviour
     public Button BackButton;
     public GameObject mainMenu;
     public GameObject optionsMenu;
+    public Material trapMat;
+    public Material goalMat;
+    public Toggle colorblindMode;
 
     // Start is called before the first frame update
     void Start()
