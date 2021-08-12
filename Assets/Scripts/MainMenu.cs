@@ -24,12 +24,6 @@ public class MainMenu : MonoBehaviour
 
         Button quitB = QuitButton.GetComponent<Button>();
         quitB.onClick.AddListener(QuitMaze);
-
-        Button optionsB = OptionsButton.GetComponent<Button>();
-        optionsB.onClick.AddListener(EnterOptions);
-
-        Button backB = BackButton.GetComponent<Button>();
-        backB.onClick.AddListener(LeaveOptions);
     }
 
     // Update is called once per frame
@@ -59,17 +53,5 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Quit Game");
         Application.Quit();
-    }
-
-    public void EnterOptions()
-    {
-        mainMenu.gameObject.SetActive(false);
-        optionsMenu.gameObject.SetActive(true);
-    }
-
-    public void LeaveOptions()
-    {
-        mainMenu.gameObject.SetActive(true);
-        optionsMenu.gameObject.SetActive(false);
     }
 }
