@@ -42,6 +42,16 @@ public class MainMenu : MonoBehaviour
     public void PlayMaze()
     {
         SceneManager.LoadScene("maze");
+        if (colorblindMode.isOn == true)
+        {
+            trapMat.color = new Color32(255, 112, 0, 1);
+            goalMat.color = Color.blue;
+        }
+        else
+        {
+            trapMat.color = Color.red;
+            goalMat.color = Color.green;
+        }
     }
 
     /// <summary>Quits game when button is pushed</summary>
