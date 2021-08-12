@@ -669,6 +669,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayButton: {fileID: 1329157529}
   QuitButton: {fileID: 950326180}
+  OptionsButton: {fileID: 338528746}
+  BackButton: {fileID: 224242168}
+  mainMenu: {fileID: 611100563}
+  optionsMenu: {fileID: 1906921481}
 --- !u!1 &674724208
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,7 +888,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &864934883
