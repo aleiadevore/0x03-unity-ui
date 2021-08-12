@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     ///<summary>Moves game object when keys WASD or arrow keys are pressed</summary>
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            SceneManager.LoadScene("menu");
         // Checking health before moving
         if (health == 0)
         {
